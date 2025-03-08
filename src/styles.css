@@ -1,0 +1,36 @@
+/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
+:root {
+  --bg--color: #ebe9e1;
+  --font--color: #fff;
+  --create-botton: #1b8732;
+  --edit-button: #1d24a1;
+  --delete-button: #c92516;
+  --shadow-color: #121110;
+  --head-color: #a2cfa2;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Itim", cursive;
+}
+body {
+  background-color: rgb(209, 207, 207);
+}
+button {
+  margin: 10px;
+  padding: 8px 16px;
+  background-color: var(--edit-button);
+  color: var(--font--color);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+#edit {
+  background-color: var(--edit-button);
+}
+#delete {
+  background-color: var(--delete-button);
+}

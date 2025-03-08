@@ -1,0 +1,10 @@
+<app-header
+  (newItemEvent)="add_new_data($event)"
+  [editMode]="pop_up_open"
+  [edit_data_pushed]="edit_data"
+  (close)="form_closed($event)"
+></app-header>
+<app-table
+  [tableData]="tableData"
+  (edit_enabled)="open_popup($event)"
+></app-table>

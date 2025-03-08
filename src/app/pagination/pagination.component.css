@@ -1,0 +1,20 @@
+.footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: large;
+}
+
+.footer button {
+  padding: 0.5rem 1rem;
+  color: var(--shadow-color);
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  font-size: large;
+}
+
+.footer button.active,
+.footer button:hover {
+  background: linear-gradient(to bottom, #9c9c9c 0%, #a9a6a6 100%);
+}

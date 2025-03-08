@@ -1,0 +1,27 @@
+<div class="footer">
+  <div class="dropdown">
+    <label for="entries"
+      >Show:
+      <select
+        name="entry"
+        id="entry"
+        [(ngModel)]="entriesPerPage"
+        (change)="onEntriesChange()"
+      >
+        <option value="5">5</option>
+        <option value="10">10</option>
+        <option value="25">25</option>
+        <option value="50">50</option>
+      </select>
+    </label>
+  </div>
+  <div class="index-btn">
+    <button (click)="prevPage()" [disabled]="currentPage === 1">«</button>
+    <button *ngFor="let page of pages" (click)="goToPage(page)">
+      {{ page }}
+    </button>
+    <button (click)="nextPage()" [disabled]="currentPage === totalPages">
+      »
+    </button>
+  </div>
+</div>

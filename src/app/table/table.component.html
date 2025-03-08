@@ -1,0 +1,59 @@
+<div class="table">
+  <table id="outputTable">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Mobile Details</th>
+        <th>Address</th>
+        <th>Action</th>
+      </tr>
+      <tr *ngFor="let data of filterData; let i = index">
+        <td>{{ data.name }}</td>
+        <td>{{ data.email }}</td>
+        <td>{{ data.mobile }}</td>
+        <td>{{ data.address }}</td>
+        <td>
+          <button id="edit" (click)="editData(i)">Edit</button>
+          <button id="delete" (click)="toggleConfirmForm($event)">
+            Delete
+          </button>
+        </td>
+        <div id="confirm" class="hidden" *ngIf="isVisible">
+          <p>Are you sure want to delete this entry?</p>
+          <button id="yes" (click)="confirmDelete()">Yes</button>
+          <button id="cancel" (click)="isVisible = false">Cancel</button>
+        </div>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</div>
+<div class="footer">
+  <div class="dropdown">
+    <label for="entries"
+      >Show:
+      <select
+        name="entry"
+        id="entry"
+        [(ngModel)]="entriesPerPage"
+        (change)="onEntriesChange()"
+      >
+        <option value="5">5</option>
+        <option value="10">10</option>
+        <option value="25">25</option>
+        <option value="50">50</option>
+      </select>
+    </label>
+  </div>
+  <div class="index-btn">
+    <button (click)="prevPage()" [disabled]="currentPage === 1">«</button>
+    <button >
+      {{ currentPage }}
+    </button>
+    <button (click)="nextPage()" [disabled]="currentPage === totalPages">
+      »
+    </button>
+  </div>
+</div>
+

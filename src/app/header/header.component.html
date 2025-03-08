@@ -1,0 +1,25 @@
+<h2>Employee Data Management :</h2>
+<div class="create">
+  <button id="create-btn" (click)="togglePopupForm()">Add Employee</button>
+</div>
+
+<div class="container" #formContainer id="formContainer" hidden>
+  <form autocomplete="off">
+    <div class="close-btn" (click)="closeForm()">&times;</div>
+    <label for="nameInput"> Name: </label>
+    <input type="text" #nameInput placeholder="Enter Name..." required />
+    <label for="emailInput"> Email ID: </label>
+    <input type="email" #emailInput placeholder="Enter Email..." required />
+    <label for="numberInput"> Mobile Details: </label>
+    <input
+      type="text"
+      #numberInput
+      placeholder="Enter Mobile Details..."
+      required
+    />
+    <label for="addressInput"> Address: </label>
+    <textarea #addressInput placeholder="Enter Address..." required></textarea>
+    <br />
+    <button (click)="addNewItem()">Save</button>
+  </form>
+</div>
